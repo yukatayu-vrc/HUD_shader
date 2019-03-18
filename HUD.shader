@@ -4,23 +4,12 @@ Shader "Yukatayu/Empty" {
 
 	SubShader {
 		Tags { "RenderType"="Opaque" }
-		Colormask 0 Zwrite Off
 
 		Pass {
-			//CGPROGRAM
-			//#pragma target 3.0
-			//#include "UnityCG.cginc"
+			CGPROGRAM
+			#pragma target 3.0
+			#include "UnityCG.cginc"
 
-			/*
-			#pragma surface surf Standard fullforwardshadows
-			struct Input {
-				float2 uv_MainTex;
-			};
-			void surf (Input IN, inout SurfaceOutputStandard o) {
-			}
-			*/
-
-			/*
 			#pragma vertex vert
 			struct appdata {
 				float4 vertex : POSITION;
@@ -31,9 +20,7 @@ Shader "Yukatayu/Empty" {
 				o.pos = ComputeScreenPos(o.vertex);
 				return o;
 			}
-			*/
 
-			/*
 			#pragma fragment frag
 			struct v2f {
 				float4 vertex : SV_POSITION;
@@ -43,9 +30,8 @@ Shader "Yukatayu/Empty" {
 				// r, g, b, alpha
 				return float4(1., 0., 0., 1.);
 			}
-			*/
 
-			//ENDCG
+			ENDCG
 		}
 	}
 }
